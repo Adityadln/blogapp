@@ -1,0 +1,378 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,700;1,900&family=Pixelify+Sans:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+    font-family: 'Pixelify Sans', cursive;
+}
+
+body {
+    background-color: #001E2B;
+}
+
+html {
+    height: 100vh;
+}
+
+.main {
+    display: flex;
+    margin: auto;
+    margin-top: 50vh;
+    transform: translateY(-50%);
+}
+
+.form-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: fit-content;
+    padding: 2.5rem 1.25rem;
+    border: 0.125rem solid black;
+    border-radius: 0.75rem;
+    border: 0.0625rem solid #00ED64;
+   
+}
+
+input {
+    width: 20rem;
+    height: 2.8125rem;
+    border-radius: 0.75rem;
+    margin: 0.3125rem;
+    font-size: 1.125rem;
+    padding: 0.3125rem;
+}
+
+label {
+    font-size: 0.875rem;
+    padding: 0.3125rem;
+    color: #00ED64;
+}
+
+.submitbtn {
+    width: 7.5rem;
+    height: 2.5rem;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+    padding: 0.375rem 0.1875rem;
+    background-color: #001E2B;
+    color: #00ED64;
+    font-weight: 600;
+    margin: 0.625rem;
+    border: 0.125rem solid #00ED64;
+    
+}
+.submitbtn.active{
+    color: #001E2B;
+    background-color: #00ED64;
+}
+.submitbtn.active:hover{
+    color: #00ED64;
+    background-color: #001E2B;
+}
+
+.logoutbtn {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+   
+}
+.submitbtn:hover {
+    background-color: #00ED64;
+    color: #001E2B;
+    border: 0.125rem solid #001E2B;
+}
+
+.btndiv {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Lato', sans-serif;
+    font-family: 'Pixelify Sans', cursive;
+    color: #00ED64;
+    
+    font-size: 5rem;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+.headertitle {
+
+    color: #00ED64;
+    font-size: 2.5rem;
+}
+.error{
+   color: #FFD700;
+   font-size: 16px;
+   font-weight: 600;
+}
+.linktext{
+    text-align: center;
+    font-weight: 600;
+    color: white;
+    font-size: 14px;
+    padding: 1rem;
+   
+}
+.link{
+    text-decoration: none;
+    color: #00ED64;
+}
+.blogspace{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 50vw;
+    height: 80vh;
+    margin-top: 2vh;
+    margin-right: 5vw;
+    margin-left: 5vw;
+    border :2px solid #00ED64;
+    overflow: auto;
+    border-radius: 8px;
+    padding: 10px;  
+    
+}
+.blogdisplay{
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+    height: 80vh;
+    margin: 5vh 5vw;
+    border :2px solid #00ED64;
+    overflow-y:auto;
+    border-radius: 8px;
+    padding: 10px;  
+}
+
+.a-blog{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 30%;
+    margin: 3px;
+    border-radius: 8px;
+    border: 2px solid #FFD700;
+    overflow-y: hidden;
+    
+    
+}
+.a-blog-header{
+   
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    height: fit-content;
+    color: #00ED64;
+    padding: 4px;
+    border-bottom: 1px solid #00ED64;
+    
+
+}
+.a-blog-title{
+    font-size: 35px;
+    
+}
+.a-blog-title-user{
+    display: flex;
+    flex-direction: column;
+    color: #FFD700;
+    
+}
+.a-blog-user{
+    
+    cursor: pointer;
+}
+.a-blog-content{
+   
+    width: 100%;
+    color: #00ED64;
+    padding: 4px;
+    cursor: pointer;
+    
+    
+
+
+}
+.FormInput{
+    height: 100%;
+    width:100%;
+
+}
+input {
+    width: 20rem;
+    height: 2.8125rem;
+    border-radius: 0.75rem;
+    margin: 0.3125rem;
+    font-size: 1.125rem;
+    padding: 0.3125rem;
+    
+
+}
+
+label {
+    font-size: 0.875rem;
+    padding: 0.3125rem;
+    color: #00ED64;
+    
+}
+.blog-header{
+    display: flex;
+    width: 50vw;
+    justify-content: center;
+    align-items: center;
+    margin-right: 5vw;
+    margin-left: 5vw;
+
+}
+@media (max-width :768px) {
+    .main{
+        flex-direction: column;   
+    }
+}
+@media (max-width :1024px) {
+    .blogspace,.blog-header{
+        width: 90vw;
+    }
+    .blogtext{
+        opacity: 0;
+    }
+    .blogdisplay{
+        margin: auto ;
+        margin-top: 10px;
+    }
+    
+}
+@media (max-width:525px){
+    .hellomsg,.a-blog-time{
+        opacity: 0;
+    }
+}
+.blog{
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-between;
+}
+.bloginside{
+    display: flex;
+    flex-direction: column; 
+}
+.blogtext{
+   
+   font-size: 108px;
+ 
+   color: #00ED64;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 40vw;
+   margin-right: 5vw;
+   margin-left: 5vw;
+}
+.blogadd{
+    color: #00ED64;
+    font-size: 24px;
+    font-weight: 600;
+   
+    width: fit-content;
+    padding: 1rem;
+    border: 2px solid #FFD700 ;
+}
+.blogadd:hover{
+    color: #001E2B;
+    background-color: #00ED64;
+    cursor: pointer;
+}
+
+
+::-webkit-scrollbar{
+    width: 0;
+}
+.blogbox{
+    width: 100%;
+    height: 30%;
+    margin: 8px;
+    padding: 8px;
+    border: 2px solid #00ED64;
+    border-radius: 8px;
+}
+.errormodify{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    color:#00ED64 ;
+    text-decoration: 0.25px solid underline #FFD700;
+    
+   
+}
+.hellomsg{
+   color: #FFD700;
+   font-size: 20px;
+   font-weight: 600;
+   font-family: 'Pixelify Sans', cursive;
+   display: flex;
+   align-items: center;
+}
+.header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 15px;
+}
+.inputCls{
+  width: 100%;
+  color: #FFD700;
+  background-color: #001E2B;
+  border: 2px solid #00ED64;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+  margin-bottom: 5px;
+}
+.textareaCls{
+    width: 100%;
+  height: 80%;
+  color: #FFD700;
+  background-color: #001E2B;
+  border: 2px solid #00ED64;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 0.75rem;
+  padding: 0.3125rem;
+  margin-bottom: 0;
+}
+.error404{
+    width: 100vw;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #00ED64;
+    font-size: 40px;
+    flex-direction: column;
+}
+.error404link{
+   font-size: 30px;
+}
+.usericon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;   
+}
+.iconparent{
+    display: flex;
+    flex-direction: column;
+
+}

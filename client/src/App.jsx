@@ -16,19 +16,17 @@ function App() {
     //in react-router-dom v6 Redirect,Component is replaced by Navigate,Element
     <>
       <Router>
-     
         <Routes>
           <Route path='/' Component={Home}/>
           <Route path='/login' element={<Login/>}/>
           <Route path='/signup' Component={Signup}/>
-            <Route element={<Auth/>}>
+          <Route element={<Auth/>}>
               <Route  path='/blogs' Component={Blogs}/>
               <Route path='/blogs/add' element={<Add/>}/>
               <Route path='/blogs/:id' element={<BlogPiece/>} />
               <Route path='/blogs/user/:id' element={<UserProfile/>} />
               <Route path='/404' element={<PageNotFound/>} />
-              <Route path='*' element={<Navigate to='/404'/>} /> 
-            
+              <Route path='*' element={<Navigate to='/404'/>} />   
           </Route> 
           
 

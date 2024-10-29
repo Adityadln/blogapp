@@ -7,17 +7,16 @@ dotenv.config();
 app.use(cors());
 app.use(express.json())
 import router from './router.js';
-const docker_uri = process.env.uri_docker
-const local_uri = process.env.uri_local
+const db_url = process.env.MONGO_URL
 const runDb=async()=>{
-  await mongoose.connect(docker_uri)
+  await mongoose.connect(db_url)
 }
 runDb()
   .then((result)=>{
     console.log("The database is successfully running ")
   })
   .catch((err)=>{
-    throw new Error("Error has occured with the DB")
+    throw new Error("Error has occured with the DB"+err)
 })
    
 app.listen(process.env.PORT,()=>{

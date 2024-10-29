@@ -5,7 +5,6 @@ import Header from "./codepieces/header";
 import './styles/index.css';
 const BlogPiece = () => {
     const id=useParams();
-    const url='http://localhost:8080/blogs/findone'
     const usercontext=useContext(UserContext); 
     const [title,settitle]=useState('');
     const [content,setcontent] = useState('');
@@ -15,6 +14,7 @@ const BlogPiece = () => {
     const navigate=useNavigate()
     useEffect(()=>{
         const findone=async()=>{
+            const url = import.meta.env.VITE_BACKEND_URL + '/blogs/findone'
             try{
                 const response = await fetch(url,{
                     headers: {'Content-Type': 'application/json'},
@@ -36,9 +36,9 @@ const BlogPiece = () => {
        
     },[])
     useEffect(()=>{
-        const url='http://localhost:8080/blogs/modify'
-       if(!submitted) return;
-       const modify=async()=>{
+        if(!submitted) return;
+        const modify=async()=>{
+        const url = import.meta.env.VITE_BACKEND_URL + '/blogs/modify'
         try{
             const response=await fetch(url,{
                 method:'PATCH',
@@ -63,10 +63,10 @@ const BlogPiece = () => {
        modify();
     },[submitted])
     useEffect(()=>{
-        const url='http://localhost:8080/blogs/delete';
         console.log("hello!");
-       if(!submitteddelete) return;
-       const Delete=async()=>{
+        if(!submitteddelete) return;
+        const Delete=async()=>{
+        const url = import.meta.env.VITE_BACKEND_URL + '/blogs/delete';
         try{
             const response=await fetch(url,{
                 method:'DELETE',

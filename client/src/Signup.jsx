@@ -1,7 +1,7 @@
 
 import { useEffect, useState } from "react";
 import {Link,useNavigate} from 'react-router-dom';
-const url='http://localhost:8080/signup';
+
 import './styles/index.css';
 import Cookies from "js-cookie";
 const Signup = () => {
@@ -16,6 +16,7 @@ const [error,seterror]=useState(' ');
        
         const fetchRequest =async()=>{  
             if(!submit) return;     
+            const url = import.meta.env.VITE_BACKEND_URL + '/signup';     
             try{
                 const res=await fetch(url,{
                    method: 'POST',

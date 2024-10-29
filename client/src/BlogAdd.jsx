@@ -10,9 +10,9 @@ const Add = () => {
     const [title,settitle] = useState('');
     const [description,setdescription] = useState('');
     useEffect(()=>{
-        const url='http://localhost:8080/blogs/add';
         if(!submitted) return;
         const submit=async()=>{
+            const url = import.meta.env.VITE_BACKEND_URL + '/blogs/add';
             try{
                 const response=await fetch(url,{
                     method: 'POST',

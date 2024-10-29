@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import Cookies from 'js-cookie';
-const url='http://localhost:8080/login';
 
 const useAuth = ({email,password,submit,setsubmit}) => {
     const [userdata,setuserdata] =useState({});
@@ -12,6 +11,7 @@ const useAuth = ({email,password,submit,setsubmit}) => {
        
         const fetchRequest =async()=>{  
             if(!submit) return;     
+            const url = import.meta.env.VITE_BACKEND_URL + '/login';     
             try{
                 const res=await fetch(url,{
                    method: 'POST',

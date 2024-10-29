@@ -1,7 +1,7 @@
 import { createContext, useEffect, useState } from "react";
 import { Outlet, useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
-const url = "http://backend:8080/blogs/verify";
+const url = "http://localhost:8080/blogs/verify";
 const UserContext=createContext({});
 
 const Auth = () => {
@@ -28,7 +28,7 @@ const Auth = () => {
     
         if (res.status === 200) {
           console.log(data);
-          const urlFind='http://backend:8080/blogs/find';
+          const urlFind='http://localhost:8080/blogs/find';
           const response=await fetch(urlFind,{
             method: "POST",
             headers:{

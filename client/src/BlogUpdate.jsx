@@ -5,7 +5,7 @@ import Header from "./codepieces/header";
 import './styles/index.css';
 const BlogPiece = () => {
     const id=useParams();
-    const url='http://backend:8080/blogs/findone'
+    const url='http://localhost:8080/blogs/findone'
     const usercontext=useContext(UserContext); 
     const [title,settitle]=useState('');
     const [content,setcontent] = useState('');
@@ -36,7 +36,7 @@ const BlogPiece = () => {
        
     },[])
     useEffect(()=>{
-        const url='http://backend:8080/blogs/modify'
+        const url='http://localhost:8080/blogs/modify'
        if(!submitted) return;
        const modify=async()=>{
         try{
@@ -63,7 +63,7 @@ const BlogPiece = () => {
        modify();
     },[submitted])
     useEffect(()=>{
-        const url='http://backend:8080/blogs/delete';
+        const url='http://localhost:8080/blogs/delete';
         console.log("hello!");
        if(!submitteddelete) return;
        const Delete=async()=>{

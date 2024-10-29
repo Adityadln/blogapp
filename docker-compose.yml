@@ -1,4 +1,5 @@
 version: '3.8'
+
 services:
   mongo:
     image: mongo:latest
@@ -8,6 +9,8 @@ services:
       - "27017:27017"
     volumes:
       - mongo_data:/data/db
+    networks:
+      - app_network 
 
   backend:
     build:
@@ -18,7 +21,9 @@ services:
       - "8080:8080"
     depends_on:
       - mongo
-    
+    networks:
+      - app_network 
+
   frontend:
     build:
       context: ./client
@@ -28,9 +33,11 @@ services:
       - "5173:5173"
     depends_on:
       - backend
-    
+    networks:
+      - app_network
+
 volumes:
   mongo_data:
-     
 
-  
+networks:
+  app_network:  

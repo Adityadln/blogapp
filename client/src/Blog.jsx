@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons'
 import { useContext, useEffect, useState } from "react";
-const url="http://backend:8080/blogs/logout";
+const url="http://localhost:8080/blogs/logout";
 import Header from "./codepieces/header";
 import { UserContext } from "./auth/auth";
 import { Link,useNavigate } from "react-router-dom";
@@ -11,7 +11,7 @@ const Blogs = () => {
   const [allblogs,setallblogs]=useState([])
   useEffect(()=>{
     const getBlogs=async()=>{
-      const url='http://backend:8080/blogs/getall';
+      const url='http://localhost:8080/blogs/getall';
       try{
         const response = await fetch(url,{
           method:'POST',

@@ -1,7 +1,7 @@
 
 import { useEffect, useState } from "react";
 import {Link,useNavigate} from 'react-router-dom';
-const url='http://backend:8080/signup';
+const url='http://localhost:8080/signup';
 import './styles/index.css';
 import Cookies from "js-cookie";
 const Signup = () => {

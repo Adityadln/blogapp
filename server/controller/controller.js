@@ -10,7 +10,6 @@ const createToken=(id)=>{
       expiresIn:"1 day",
     });  
 }
- //verify is an async code function
 const verifyToken=(token)=>{
   return new Promise((resolve,reject)=>{
     jwt.verify(token,process.env.SECRET_KEY,(err,decodedtoken)=>{
@@ -24,14 +23,20 @@ const verifyToken=(token)=>{
   }) 
 }
 
-const errorHandler=(err)=>{
-  let error='';
-  Object.values(err.errors).forEach((err)=>{
-    error+=err.properties.message+" -- ";
-  })
+const errorHandler = (err) => {
+  let error = '';
+  
+  if (err && err.errors) {
+    Object.values(err.errors).forEach((err) => {
+      error += err.properties.message + " -- ";
+    });
+  } else {
+    error = err.message || 'An unknown error occurred';
+  }
+
   console.error(error);
-  return error; 
-}
+  return error;
+};
 
 const userBlog=async(user,id)=>{
     const document=await User.findById(user._id);

@@ -52,6 +52,6 @@ userSchema.pre("save",async function(next){
 })
 
 const User=mongoose.model('User',userSchema);
-const Blog=mongoose.model('Blog',blogschema);
+const Blog=mongoose.model('Blog',blogschema);//for the collection name it would be blogs...decapitalize the first letter and add s.
 
 export {User,Blog};

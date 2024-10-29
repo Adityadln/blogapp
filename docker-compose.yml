@@ -1,0 +1,36 @@
+version: '3.8'
+services:
+  mongo:
+    image: mongo:latest
+    container_name: mongo_container
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+  backend:
+    build:
+      context: ./server
+    container_name: backend_container
+    restart: always
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mongo
+    
+  frontend:
+    build:
+      context: ./client
+    container_name: frontend_container
+    restart: always
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend
+    
+volumes:
+  mongo_data:
+     
+
+  

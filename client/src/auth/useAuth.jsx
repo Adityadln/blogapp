@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Cookies from 'js-cookie';
-const url='http://localhost:8080/login';
+const url='http://backend:8080/login';
 
 const useAuth = ({email,password,submit,setsubmit}) => {
     const [userdata,setuserdata] =useState({});

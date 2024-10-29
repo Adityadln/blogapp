@@ -10,7 +10,7 @@ const Add = () => {
     const [title,settitle] = useState('');
     const [description,setdescription] = useState('');
     useEffect(()=>{
-        const url='http://localhost:8080/blogs/add';
+        const url='http://backend:8080/blogs/add';
         if(!submitted) return;
         const submit=async()=>{
             try{

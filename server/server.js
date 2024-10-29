@@ -5,11 +5,12 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 dotenv.config();
 app.use(cors());
-app.use(express.json())//parses the incoming JSON object else it will be undefined and the server cant read it
+app.use(express.json())
 import router from './router.js';
-
+const docker_uri = process.env.uri_docker
+const local_uri = process.env.uri_local
 const runDb=async()=>{
-  await mongoose.connect(process.env.uri)
+  await mongoose.connect(docker_uri)
 }
 runDb()
   .then((result)=>{

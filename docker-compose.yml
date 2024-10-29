@@ -32,7 +32,7 @@ services:
     container_name: frontend_container
     restart: always
     ports:
-      - "5173:5173"
+      - "5173:80"
     depends_on:
       - backend
     networks:
